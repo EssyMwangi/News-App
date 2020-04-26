@@ -8,13 +8,19 @@ Articles = articles.Articles
 
 
 # Getting api key
-api_key = app.config['NEWS_API_KEY']
+api_key = None
+# Getting the movie base url
+base_url = None
+arti_url = None
+articles_url = None
 
 # Getting the movie base url
 
-base_url = app.config['NEWS_API_BASE_URL']
-arti_url = app.config['NEWS_ARTICLES_APL_URL']
-articles_url = app.config['SOURCE_ARTICLES_URL']
+def configure_request(app):
+    global base_url,arti_url,articles_url
+    base_url = app.config['NEWS_API_BASE_URL']
+    arti_url = app.config['NEWS_ARTICLES_APL_URL']
+    articles_url = app.config['SOURCE_ARTICLES_URL']
 
 def get_sources(category):
     """
