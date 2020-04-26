@@ -16,12 +16,8 @@ def index():
     title = 'Home - Welcome to The best News App'
 
 
-    search_articles = request.args.get('article_query')
-
-    if search_articles:
-        return redirect(url_for('.search',article_name=search_articles))
-    else:
-        return render_template('index.html',general=general_news,business=business_news,sports=sports_news )
+    
+    return render_template('index.html',general=general_news,business=business_news,sports=sports_news )
 
 
 @main.route('/articles/<id>')
