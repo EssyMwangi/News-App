@@ -1,1 +1,28 @@
-<h1> {{ message }} </h1>
+{% import 'macros.html' as macro%}
+{% extends 'base.html'%}
+
+
+{% block content %}
+     <form>
+          <input type="text" name="article_query" placeholder="Search for an article.." class="form-control">
+          <input type="submit"  value="Submit" class="btn btn-default">
+      </form>
+
+<div class="container-fluid" id="allsources" >
+    <div class="overlay">
+        <h2 class="text-center font-weight-bold headers" >General News</h2>
+        {{ macro.display_new_sources(general) }}
+ 
+        <h2 class="text-center font-weight-bold headers" > Business News</h2>
+        {{ macro.display_new_sources(business) }}
+        <h2 class="text-center font-weight-bold headers" > Sports news </h2>
+        {{ macro.display_new_sources(sports) }}
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+

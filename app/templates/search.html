@@ -1,0 +1,14 @@
+{% import 'macros.html' as macro%}
+{% extends 'base.html'%}
+
+
+
+    <div class="container">
+
+        <h3>{{ articles | count }}</h3>
+            {{ macro.display_new_articles(articles) }}
+
+    </div>
+
+{% endblock %}
+

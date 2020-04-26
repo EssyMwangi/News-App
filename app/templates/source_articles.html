@@ -1,1 +1,21 @@
-<h1> News App {{ id }} </h1>
+{% import 'macros.html' as macro%}
+{% extends 'base.html'%}
+
+
+
+
+{% block content %}
+
+    <div class="container-fluid" id="allsources">
+        <div class="overlay">
+            {{ macro.display_Source_articles(articles)}}
+        </div>
+        
+    </div>
+    
+{% endblock %}
+
+
+
+
+
