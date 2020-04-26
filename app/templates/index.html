@@ -2,6 +2,8 @@
 {% extends 'base.html'%}
 
 
+
+
 {% block content %}
      <form>
           <input type="text" name="article_query" placeholder="Search for an article.." class="form-control">
@@ -10,12 +12,12 @@
 
 <div class="container-fluid" id="allsources" >
     <div class="overlay">
-        <h2 class="text-center font-weight-bold headers" >General News</h2>
+        <h2 class="text-center font-weight-bold headers" class="headings" >General News</h2>
         {{ macro.display_new_sources(general) }}
  
-        <h2 class="text-center font-weight-bold headers" > Business News</h2>
+        <h2 class="text-center font-weight-bold headers" class="headings"> Business News</h2>
         {{ macro.display_new_sources(business) }}
-        <h2 class="text-center font-weight-bold headers" > Sports news </h2>
+        <h2 class="text-center font-weight-bold headers"class="headings" > Sports news </h2>
         {{ macro.display_new_sources(sports) }}
     </div>
 </div>
