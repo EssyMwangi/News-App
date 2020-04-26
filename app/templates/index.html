@@ -5,22 +5,29 @@
 
 
 {% block content %}
-     <form>
+     <!-- <form>
           <input type="text" name="article_query" placeholder="Search for an article.." class="form-control">
           <input type="submit"  value="Submit" class="btn btn-default">
-      </form>
+      </form> -->
 
-<div class="container-fluid" id="allsources" >
-    <div class="overlay">
-        <h2 class="text-center font-weight-bold headers" class="headings" >General News</h2>
-        {{ macro.display_new_sources(general) }}
- 
-        <h2 class="text-center font-weight-bold headers" class="headings"> Business News</h2>
-        {{ macro.display_new_sources(business) }}
-        <h2 class="text-center font-weight-bold headers"class="headings" > Sports news </h2>
-        {{ macro.display_new_sources(sports) }}
+    <div class="container-fluid" id="allmysources" >
+        
+            <h2 class="text-center font-weight-bold headers" style="color: whitesmoke;">General News</h2>
+            <hr>
+            {{ macro.display_new_sources(general) }}
+            
+            
+            <h2 class="text-center font-weight-bold headers" style="color: whitesmoke;">Business News</h2>
+            <hr>
+            {{ macro.display_new_sources(business) }}
+            
+            <h2 class="text-center font-weight-bold headers" style="color: whitesmoke;"> Sports news </h2>
+            <hr>
+            {{ macro.display_new_sources(sports) }}
+            
+        
     </div>
-</div>
+    
 
 {% endblock %}
 

@@ -2,10 +2,9 @@
 {% extends 'base.html'%}
 
 
-
 {% block content %}
-<div class="container-fluid" id="allsources">
-    <div class="overlay container-fluid">    
+<div class="container-fluid" id="allmysources">
+    <div class="container-fluid">    
         <h2 class="text-center headers">Technology Articles</h2>
         {{macro.display_new_articles(tech)}}
 
@@ -14,7 +13,6 @@
     </div>
 </div>
 {% endblock %}
-
 
 
 

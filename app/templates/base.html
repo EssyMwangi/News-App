@@ -2,13 +2,49 @@
 
 
 
-<!-- Navbar block  --> 
-{% block navbar %}
-    {% include 'navbar.html' %}
-{% endblock %}
+<DOCTYPE html>
 
-{% block styles %}
-        
+<head>
+    
+    <title>Welcome to News App</title>
+    {% block styles %}
+     
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-{% endblock %}
+    <style>
+    #allmysources{
+        background-image: url("https://user-images.githubusercontent.com/44394821/80317601-7f4e1f00-880d-11ea-8849-557dee0f8606.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .card{
+        background-color: rgba(71, 40, 85, 0.9);
+        color: cornsilk;
+    }
+    .card-title{
+        color: white;
+    }
+    </style>
+    {% endblock %}
+</head>
+<body>
+   
+
+
+    {% block navbar %}
+    {% include "navbar.html" %}
+    {% endblock %}
+
+    {% block content %}
+
+    
+    {% endblock %}
+    
+  
+</body>
+</DOCTYPE html>
+
+
+

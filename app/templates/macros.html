@@ -1,12 +1,13 @@
 
 {% extends 'base.html'%}
+
 {% macro display_new_sources(sources_outcome) %}
     <div class="container-fluid">
         <div class="card-columns">
             {% for news in sources_outcome %}
             <div class="card">
-                <div class="card-header" id="sourcename" >
-                    <h4><a href="/articles/{{news.id}}">{{news.name}}</a></h4>
+                <div class="card-header" id="headername" >
+                    <h4 style="text-align: center; color: cornsilk;"><a href="/articles/{{news.id}}">{{news.name}}</a></h4>
                 </div>
                 <div class="card-body">
                     <p class="desc">
@@ -17,8 +18,8 @@
                 
                 <div class="card footer" >
                     <br>
-                    <a href="/articles/{{news.id}}"><button class="btn btn-sm btn-success ">Read Articles</button> </a>
-                    <a href="{{news.url}}"><button class="btn btn-flex btn-warning" id="visit">See:{{news.name}}</button></a>
+                    <a href="/articles/{{news.id}}"><button class="btn btn-sm btn-info">Read Articles</button> </a>
+                    <a href="{{news.url}}"><button class="btn btn-rounded btn-flex btn-success" id="visit">See:{{news.name}}</button></a>
                     <br>
                     
                 </div>
