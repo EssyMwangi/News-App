@@ -1,4 +1,4 @@
-# News_Bulletins
+# News-App
 
 ## Author
 
