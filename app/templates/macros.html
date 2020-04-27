@@ -17,13 +17,8 @@
       <div class="card footer">
         <br />
         <a href="/articles/{{news.id}}"
-          ><button class="btn btn-sm btn-info">Read Articles</button>
+          ><button class="btn btn-md btn-info">Read Articles</button>
         </a>
-        <a href="{{news.url}}"
-          ><button class="btn btn-rounded btn-flex btn-success" id="visit">
-            {{news.name}}
-          </button></a
-        >
         <br />
       </div>
     </div>
@@ -67,7 +62,6 @@
 <div class="container" id="articles">
   <div class="row">
     {% for art in source_articles %}
-
     <div class="col-md-12">
       <div class="card" style="padding: 10px;margin-bottom: 20px">
         <div class="card-header title">
