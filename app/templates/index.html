@@ -1,37 +1,27 @@
-{% import 'macros.html' as macro%}
-{% extends 'base.html'%}
-
-
-
-
-{% block content %}
-     <!-- <form>
+{% import 'macros.html' as macro%} {% extends 'base.html'%} {% block content %}
+<!-- <form>
           <input type="text" name="article_query" placeholder="Search for an article.." class="form-control">
           <input type="submit"  value="Submit" class="btn btn-default">
       </form> -->
 
-    <div class="container-fluid" id="allmysources" >
-        
-            <h2 class="text-center font-weight-bold headers" style="color: black;">General News</h2>
-            <hr>
-            {{ macro.display_new_sources(general) }}
-            
-            
-            <h2 class="text-center font-weight-bold headers" style="color: black;">Business News</h2>
-            <hr>
-            {{ macro.display_new_sources(business) }}
-            
-            <h2 class="text-center font-weight-bold headers" style="color: black;"> Sports news </h2>
-            <hr>
-            {{ macro.display_new_sources(sports) }}
-            
-        
-    </div>
-    
+<div class="container-fluid" id="allmysources">
+  <h2 class="text-center font-weight-bold headers" style="color: whitesmoke;">
+    General News
+  </h2>
+  <hr />
+  {{ macro.display_new_sources(general) }}
+
+  <h2 class="text-center font-weight-bold headers" style="color: whitesmoke;">
+    Business News
+  </h2>
+  <hr />
+  {{ macro.display_new_sources(business) }}
+
+  <h2 class="text-center font-weight-bold headers" style="color: whitesmoke;">
+    Sports news
+  </h2>
+  <hr />
+  {{ macro.display_new_sources(sports) }}
+</div>
 
 {% endblock %}
-
-
-
-
-

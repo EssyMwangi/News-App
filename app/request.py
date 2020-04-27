@@ -1,10 +1,8 @@
-import urllib.request,json
+import urllib.request
+import json
 from .models import Source
 from .models import Articles
 import os
-
-
-
 
 
 # Getting api key
@@ -16,18 +14,20 @@ articles_url = None
 
 # Getting the movie base url
 
+
 def configure_request(app):
-    global api_key,base_url,arti_url,articles_url
+    global api_key, base_url, arti_url, articles_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
     arti_url = app.config['NEWS_ARTICLES_API_URL']
     articles_url = app.config['SOURCE_ARTICLES_URL']
 
+
 def get_sources(category):
     """
     function that gets response from the api call
-    """    
-    sources_url = base_url.format(category,api_key)
+    """
+    sources_url = base_url.format(category, api_key)
 
     with urllib.request.urlopen(sources_url) as url:
         sources_data = url.read()
@@ -40,6 +40,7 @@ def get_sources(category):
             sources_outcome = process_new_sources(sources_outcome_items)
     return sources_outcome
 
+
 def process_new_sources(sources_list):
     sources_outcome = []
 
@@ -51,16 +52,17 @@ def process_new_sources(sources_list):
         category = one_source.get("category")
         language = one_source.get("language")
         country = one_source.get("country")
-        
-        
-        new_source = Source(id,name,description,url,category,language,country)
+
+        new_source = Source(id, name, description, url,
+                            category, language, country)
         sources_outcome.append(new_source)
-    
+
     return sources_outcome
+
 
 def get_articles(article):
 
-    articles_url = arti_url.format(article,api_key)
+    articles_url = arti_url.format(article, api_key)
 
     with urllib.request.urlopen(articles_url) as url:
         articles_data = url.read()
@@ -73,6 +75,7 @@ def get_articles(article):
             articles_outcome = process_new_articles(articles_outcome_items)
     return articles_outcome
 
+
 def process_new_articles(articles_list):
     articles_outcome = []
 
@@ -83,14 +86,16 @@ def process_new_articles(articles_list):
         title = one_article.get("title")
         url = one_article.get("url")
         urlToImage = one_article.get("urlToImage")
-        publishedAt = one_article.get("publishedAt") 
-        new_article = Articles(source, author, title, description, url, urlToImage, publishedAt)
+        publishedAt = one_article.get("publishedAt")
+        new_article = Articles(source, author, title,
+                               description, url, urlToImage, publishedAt)
         articles_outcome.append(new_article)
-    
+
     return articles_outcome
 
+
 def articles_source(source):
-    sources_a_url =arti_url.format(source,api_key)
+    sources_a_url = arti_url.format(source, api_key)
 
     with urllib.request.urlopen(sources_a_url) as url:
         art_data = url.read()
@@ -100,6 +105,7 @@ def articles_source(source):
             source_articles_list = response['articles']
             source_articles = process_articles_source(source_articles_list)
     return source_articles
+
 
 def process_articles_source(article_list):
     source_articles = []
@@ -111,13 +117,15 @@ def process_articles_source(article_list):
         url = art.get('url')
         urlToImage = art.get('urlToImage')
         publishedAt = art.get('publishedAt')
-        
-        article_object = Articles(source,author,title,description,url,urlToImage,publishedAt)
+
+        article_object = Articles(
+            source, author, title, description, url, urlToImage, publishedAt)
         source_articles.append(article_object)
     return source_articles
 
+
 def search_articles(article_name):
-    search_url = art_url.format(article_name,api_key)
+    search_url = art_url.format(article_name, api_key)
 
     with urllib.request.urlopen(search_url) as url:
         search_data = url.read()
@@ -128,4 +136,4 @@ def search_articles(article_name):
         if search_response['articles']:
             all_search_results = search_response['articles']
             search_outcome = process_search(all_search_results)
-    return search_outcome 
+    return search_outcome
