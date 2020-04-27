@@ -43,7 +43,7 @@
                     <p class="desc">
                         {{article.description}}
                     </p>
-                    <p disabled>Posted: {{article.publishedAt | truncate(13)}} By: {{article.author | truncate(16)}} </p>
+                    <p disabled>Posted: {{article.publishedAt | truncate(18)}} By: {{article.author | truncate(16)}} </p>
                 </div>
                 <div class="card-footer">
                      <a href="{{article.url}}"><button class="btn btn-sm btn-success">Read Article</button></a> 
@@ -66,7 +66,7 @@
                     <div class="card-header title"><h4>{{art.title | truncate(58)}}</h4> </div>
                     <div class="card-body">
                         <p class="desc">{{art.description}}</p>
-                        
+                        <p disabled>Posted: {{art.publishedAt | truncate(18)}} By: {{art.author}} </p>
                     </div>
                     <div class="card-footer">
                         <a href="{{art.url}}"><button class="btn btn-sm btn-success">Read Article</button></a> 
