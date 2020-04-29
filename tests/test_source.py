@@ -16,3 +16,15 @@ class SourceTest(unittest.TestCase):
 
     def instance_test(self):
         self.assertTrue(isinstance(self.new_source, Source))
+
+    def test_check_instance_variables(self):
+        '''
+        Test case to check if the objects are instansiated correctly
+        '''
+        self.assertEquals(self.new_source.id, 'abc-news')
+        self.assertEquals(self.new_source.name, 'ABC news')
+        self.assertEquals(self.new_source.description, 'Your trusted source for breaking news')
+        self.assertEquals(self.new_source.url, "https://abcnews.go.com")
+        self.assertEquals(self.new_source.category, 'general')
+        self.assertEquals(self.new_source.language, 'en')
+        self.assertEquals(self.new_source.country, 'us')
