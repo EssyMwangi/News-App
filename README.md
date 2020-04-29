@@ -1,4 +1,4 @@
-# News_Bulletins
+# News-App
 
 ## Author
 
@@ -9,11 +9,7 @@ This is an application that will help people who want to get realtime news witho
 
 ## Live Demo
 
-Click [Link]() to visit the site
-
-## Screenshot
-
-<img src="" width="900px" height="440px">
+Click [Link](https://newsappbyess.herokuapp.com/) to visit the site
 
 ## User Story
 
